@@ -1,0 +1,173 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master_RCP.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <!--
+<meta http-equiv="Content-type" content="text/html; charset=ISO-8859-2" />
+    <title>Untitled Page</title>
+
+    <style type="text/css">
+TD	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666666;
+}
+INPUT {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	border: 1px solid #2F75C3;
+}
+.text {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666666;
+}
+.label {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666666;
+	background: #C2DCF9;
+	border: 1px solid #73A2D6;
+}
+.label2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666666;
+	background: #FFD6A9;
+	border: 1px solid #73A2D6;
+}
+</style>
+-->
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <center>
+                <table border="1" style="font-size: 10pt; font-family: 'Century Gothic'" id="TABLE1">
+                    <tr>
+                        <td colspan="2" style="height: 45px; text-align: right;" background="../grafika/a_background/naglowek_web_bezifk.jpg">
+                            <span style="font-size: 12pt; color: #0066ff; font-family: Courier New CE;"><strong>
+                                <span style="color: #3300ff">EWIAN <span style="color: #ffffff">-</span><span style="color: #33ff33"><span
+                                    style="font-family: Times New Roman">RCP</span></span><span style="color: #00cc33"><span
+                                        style="font-family: Times New Roman"></span></span></span><span style="color: #ffffff">
+                                            <asp:TextBox ID="TextBox1" runat="server" Width="36px"></asp:TextBox></span><span
+                                                style="font-size: 16pt"></span></strong><span style="font-size: 14pt; color: #ff3366;
+                                                    font-family: Vineta BT"><span style="font-size: 10pt"><span style="font-family: Times New Roman"><span
+                                                        style="color: #009900"><strong><span style="font-size: 12pt; color: #ccffff"></span></strong>&nbsp;&nbsp;
+                                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                                                    </span></span></span></span></span>
+                        </td>
+                    </tr>
+                    <tr style="font-size: 10pt">
+                        <td style="padding-right: 8px; vertical-align: top; width: 8px; line-height: normal;
+                            letter-spacing: normal; height: 20px;" background="../grafika/a_background/des_07.gif"
+                            align="left">
+                            <span style="color: #33ff33"><strong><span style="font-size: 12pt"></span></strong></span>
+                            <!--
+             druki  druki_nag harmon nadg plan_dyzur        
+rcp_kod_plac      
+rcp_sl_grafik     
+rcp_wejsc_inne    
+soc_slow          
+socjalne          
+test_wejsc        
+uprawn            
+wej_spec        -->
+                            <asp:Menu ID="Menu" runat="server" Style="margin-top: 10px; margin-left: 4px" BackColor="#CCCCFF"
+                                DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Small" ForeColor="#0033FF"
+                                StaticSubMenuIndent="10px" Width="80px" Height="18px" OnMenuItemClick="MenuItemClick">
+                                <Items>
+                                    <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Menu gł&#243;wne" Value="page 1"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/rcp/start_rcp.aspx" Text="Pracownicy" Value="page 2"
+                                        ToolTip="Wykaz pracownik&#243;w (nrst,naz,imie)"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/rcp/grafiki/grafik_nazw.aspx" Text="Grafiki" ToolTip="Grafiki"
+                                        Value="Grafiki"></asp:MenuItem>
+                                    <asp:MenuItem Text="Przetwarzanie" ToolTip="Przetwarzanie globalne danych" Value="Przetwarzanie">
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="Administracja" ToolTip="Administracja systemu RCP" Value="Administracja">
+                                        <asp:MenuItem Text="Firma" ToolTip="Dane i parametry firmy" Value="Firma"></asp:MenuItem>
+                                        <asp:MenuItem Text="Użytkownicy" ToolTip="Użytkownicy RCP" Value="Użytkownicy"></asp:MenuItem>
+                                        <asp:MenuItem Text="Filtry" ToolTip="Filtry użytkowników" Value="Filtry"></asp:MenuItem>
+                                        <asp:MenuItem Text="Blokady" ToolTip="BLOKADY - usuwanie" Value="Blokady"></asp:MenuItem>
+                                        <asp:MenuItem Text="Transformacje" ToolTip="Tablica  " Value="Transformacje">
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Tablice" ToolTip="Tablice RCP" Value="Tablice">
+                                            <asp:MenuItem Text="Firma" ToolTip="Dane i parametry firmy" Value="Firma"></asp:MenuItem>
+                                            <asp:MenuItem Text="Użytkownicy" ToolTip="Użytkownicy - uprawnienia" Value="Użytkownicy"> </asp:MenuItem>
+                                            <asp:MenuItem Text="Filtry" ToolTip="Filtry użytkowników" Value="Filtry"></asp:MenuItem>
+                                            <asp:MenuItem Text="Blokady" ToolTip="BLOKADY - usuwanie" Value="Blokady_t"></asp:MenuItem>
+                                            <asp:MenuItem Text="Personalne" ToolTip="Kartoteka Personalna" Value="Person"></asp:MenuItem>
+                                            <asp:MenuItem Text="Sł Grafik" ToolTip="Słownik Grafików" Value="sl_grafik"></asp:MenuItem>
+                                            
+                                            <asp:MenuItem Text="Wymiary" ToolTip="Wymiary urlopów i NCP" Value="Wymiary"></asp:MenuItem>
+                                            <asp:MenuItem Text="Pobyty" ToolTip="Pobyty" Value="Pobyty"></asp:MenuItem>
+                                            <asp:MenuItem Text="Rejestracje" ToolTip="Rejestracje z czytników" Value="Rejestracje"></asp:MenuItem>
+                                            <asp:MenuItem Text="Grafiki" ToolTip="Grafiki - tablica" Value="Grafiki"></asp:MenuItem>
+                                            <asp:MenuItem Text="Oddziały" ToolTip="Oddziały - kody" Value="Oddziały"></asp:MenuItem>
+                                            <asp:MenuItem Text="Grupy Wejć" ToolTip="Kategorie wejciowe" Value="Gr_wejsc"></asp:MenuItem>
+                                            <asp:MenuItem Text="Zmiany" ToolTip="Słowniki Zmian" Value="Zmiany"></asp:MenuItem>
+                                            <asp:MenuItem Text="Kody" ToolTip="Kody uzywane w programie" Value="Kody"></asp:MenuItem>
+                                            <asp:MenuItem Text="Place" ToolTip="Słownik eksportu do płac" Value="Płace"></asp:MenuItem>
+                                            <asp:MenuItem Text="Równoważniki GP" ToolTip="Kody równoważne RCP i Grafiki" Value="Równoważne">
+                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="więta" ToolTip="więta w danym roku" Value="więta"></asp:MenuItem>
+                                            <asp:MenuItem Text="Manu Główne" ToolTip="Menu użytkownika" Value="Menu_g"></asp:MenuItem>
+                                            <asp:MenuItem Text="Menu druków" ToolTip="Menu Druków użytkownika" Value="Menu_d"></asp:MenuItem>
+                                            <asp:MenuItem Text="Drukarki" ToolTip="Słowniki Drukarek" Value="Drukarki"></asp:MenuItem>
+                                            <asp:MenuItem Text="Premie" ToolTip="Premie" Value="Premie"></asp:MenuItem>
+                                            <asp:MenuItem Text="Transdysk" ToolTip="Transdysk" Value="Transdysk"></asp:MenuItem>
+                                            <asp:MenuItem Text="Wejcia Specjalne" ToolTip="Wejcia Specjalne" Value="Specjalne">                                            </asp:MenuItem>
+                                            <asp:MenuItem Text="Socjalne" ToolTip="Słowniki Socjalne" Value="Socjalne"></asp:MenuItem>
+                                            <asp:MenuItem Text="ETC" ToolTip="ETC" Value="ETC"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Słowniki" ToolTip="Słowniki Systemu RCP" Value="Słowniki">
+                                            <asp:MenuItem Text="Kody" ToolTip="Kody RCP" Value="Kody"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Ustawienia" ToolTip="Podglšd ustawień systemowych" Value="Ustawienia">
+                                        </asp:MenuItem>
+                                    </asp:MenuItem>
+                                </Items>
+                                <StaticSelectedStyle BackColor="#80FFFF" />
+                                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                <DynamicHoverStyle BackColor="Lime" Font-Bold="False" ForeColor="White" />
+                                <DynamicMenuStyle BackColor="#FFFBD6" />
+                                <DynamicSelectedStyle BackColor="Lime" />
+                                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                <StaticHoverStyle BackColor="Blue" Font-Bold="False" ForeColor="White" />
+                            </asp:Menu>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                        </td>
+                        <td style="width: 8px; vertical-align: top; height: 20px; padding-right: 8px; line-height: normal;
+                            letter-spacing: normal;" background="../grafika/a_background/des_07.gif" align="center">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                    <tr style="font-size: 10pt">
+                        <td style="width: 8px; height: 36px; text-align: center;" background="../grafika/a_background/stopka_web_rad.jpg">
+                            <strong><span style="color: #ff3300">
+                                <asp:LinkButton ID="LinkIFK" runat="server" ForeColor="Yellow" OnClick="LinkIFK_Click"
+                                    Width="99px">www.ifk.com.pl</asp:LinkButton><asp:Menu ID="MailIFK" runat="server"
+                                        OnMenuItemClick="MailIFK_Click">
+                                        <Items>
+                                            <asp:MenuItem NavigateUrl="mailto:ifk@ifk.com.pl" Text="ifk@ifk.com.pl" Value="ifk@ifk.com.pl">
+                                            </asp:MenuItem>
+                                        </Items>
+                                    </asp:Menu>
+                            </span></strong>
+                        </td>
+                        <td style="width: 511px; height: 36px; text-align: center; vertical-align: top;"
+                            background="../grafika/a_background/stopka_web_rad.jpg">
+                            <span style="color: #0033cc">Informatyczna Firma Konsultingowa Sp z o.o. 44-230 Czerwionka
+                                ul.Parkowa 3 tel (032) 4312826</span></td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+    </form>
+</body>
+</html>
